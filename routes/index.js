@@ -12,9 +12,9 @@ router.get('/credits', function(req, res, next) {
 
 router.get('/quizzes', function(req, res, next) {
 
-    sequelize.models.quiz.findAll()
+    sequelize.models.quiz.findAll()  //busca todos los quizzes
         .then(quizzes => {
-        res.render('quizzes', {quizzes});
+        res.render('quizzes', {quizzes}); //renderiza la vista ejs de la página de créditos
 })
 .catch(error =>{
         next(error);

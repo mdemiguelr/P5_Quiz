@@ -23,7 +23,7 @@ sequelize.sync()
     .then(() => sequelize.models.quiz.count())	//Cuenta cuantos quizzes hay y lo pasaremos luego como parámetro en el then
 .then(count => {
     if (!count) { //Si hay cero quizzes necesito crear mas por tanto
-    return sequelize.models.quiz.bulkCreate([
+    return sequelize.models.quiz.bulkCreate([ //inicializo BBDD
         { question: "Capital de Italia", answer: "Roma" },
         { question: "Capital de Francia", answer: "París" },
         { question: "Capital de España", answer: "Madrid" },
